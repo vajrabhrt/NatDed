@@ -18,6 +18,6 @@ But (as far as I could determine), the proofs fall in one of the following categ
 
 We have produced a short (and, we believe, new) proof of weak normalization for intuitionistic propositional logic with all the connectives, where all the key transformations are "inductive". We define the contraction relation, and extend that to a one-step reduction which is tailored to our normalization strategy. Defining the one-step reduction (extracted from the presentation by Mancosu, Galvan and Zach) is our main contribution.
 
-This repository contains a formalisation of our proof in Lean. It currently has a proof of the weak normalization for NJ, (propositional) intuitionistic logic.We hope to extend it for (propositional) classical logic, and then to first-order logic.
+This repository contains a formalisation of our proof in Lean. It currently has a proof of the weak normalization for NJ and NK, for the propositional case. We hope to extend it for first-order logic, and then to theories like Peano arithmetic.
 
 The proof has been submitted to ARXIV, and can be accessed at <https://arxiv.org/pdf/2609.14314>. 

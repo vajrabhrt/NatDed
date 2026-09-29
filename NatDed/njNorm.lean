@@ -487,9 +487,7 @@ lemma lrofOneStep : ∀ φ (π π' : njprf φ),
       simp [lrof]
 
 lemma degree_empGraft : ∀ φ α (ρ : njprf φ) (μ μ' : njprf bot),
-  graft ρ μ μ' →
-    degree (emp α μ) = degree (emp α μ') ∨
-    degree (emp α μ') = sz φ:=  by
+  graft ρ μ μ' → degree (emp α μ) = degree (emp α μ') :=  by
   intro φ α ρ μ μ' Hgraft
   cases Hgraft
   all_goals
@@ -538,8 +536,8 @@ lemma graftCutRank : ∀ d φ ψ (ρ : njprf φ) (π ϖ : njprf ψ), graft ρ π
   · rename_i α μ μ' Hgraft ih
     simp [pairAdd_fst] at H2; simp [pairAdd_fst]
     rcases H2 with ⟨H21, H22⟩
-    rcases degree_empGraft _ α _ _ _ Hgraft with G | G <;>
-      simp [degree] at * <;> try grind
+    apply degree_empGraft (α := α) at Hgraft
+    simp [degree] at *; try grind
   · rename_i α β μ μ' ν ν' Hgraftμ Hgraftν ihμ ihν
     simp [pairAdd_fst] at H2; simp [pairAdd_fst]
     rcases H2 with ⟨H21, H22⟩
